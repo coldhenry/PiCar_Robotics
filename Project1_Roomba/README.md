@@ -10,7 +10,7 @@ Design a “Roomba” like system. The robot should be able to navigate an envir
 
 In this assignment, we design a Roomba-like robot and let it navigate the environment and provide a level of coverage of given area. To see which architecture fits our robot, we first analyze the properties of a Roomba-like robot.
 
-<img src="C:\Users\coldhenry\Desktop\Fall 2019\CSE276A\Project1_Roomba\pic\SA.png" alt="structure" style="zoom:60%;" />
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project1_Roomba/pic/SA.png" alt="layout" width="640" />
 
 For a Roomba-like system, it should consist of several basic functions. First of all, it should be able to detect walls since that these are the boundaries could not be ignored. Secondly, the robot should know where it is to understand how many areas it has already covered. According to functions we request, the Roomba-like robot needs sweeping strategies, boundaries detection, and localization. Based on these, we choose to use the subsumption architecture as my framework. The diagram of the structure is shown below [1]:
 
@@ -28,7 +28,7 @@ More details would be presented in the following sections.
 
 ## Coverage Behavior
 
-<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project1_Roomba/pic/type1.jpg" alt="qr" style="zoom:48%;" />
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project1_Roomba/pic/type1.jpg" alt="layout" width="375" />
 
 As shown in the figure above, the left side is the type 1; and the right side is type 2
 
@@ -38,13 +38,13 @@ In this trajectory, the PiCar walks though the boundaries of given area, as one 
 
 ## Map Arrangement
 
-<img src="C:\Users\coldhenry\Desktop\Fall 2019\CSE276A\Project1_Roomba\pic\Picture2.png" alt="layout" style="zoom:48%;" />
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project1_Roomba/pic/Picture2.png" alt="layout" width="375" />
 
 To achieve this target, we rearrange the layout of QRcodes on the walls. The new version layout is shown on the right.
 
 The size of the environment is as same as the previous one, which shrinks from 10*10 (ft) to 8*8(ft) due to the limitation of the space. And the QR code placement is shown.
 
-<img src="C:\Users\coldhenry\Desktop\Fall 2019\CSE276A\Project1_Roomba\pic\Picture1.png" alt="qr" style="zoom:48%;" />
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project1_Roomba/pic/Picture1.png" alt="qr" width="540" />
 
 The real environment is presented below. Note that the black dash lines indicate the visualized trajectory that the PiCar should go.
 
@@ -56,27 +56,27 @@ After deriving the layout, the algorithm of sweeping is simple. The PiCar walks 
 
 Based on these thoughts, the control flow is shown:
 
-<img src="C:\Users\coldhenry\Desktop\Fall 2019\CSE_276(PC)\HW\HW5\Picture3.png" alt="img6" style="zoom:48%;" /> 
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project1_Roomba/pic/Picture3.png" alt="img6" width="640" /> 
 
 The target is defined as the distance between the landmark and the PiCar in each round. The distance varies to change the sweeping path the car goes. The PiCar moves first, then it would use the sensor (in our cases, the sensor we have is the camera) to detect the QR code. After deriving the information, we turn to the feedback section. Two information we need to feedback are: whether the PiCar needs to adjust its orientation and whether the PiCar is too far or too close to the landmark. Whenever these decisions are made, the command would be sent back to the hardware section and executed by the motor again. 
 
 ## Demo
 
-![demo](C:\Users\coldhenry\Desktop\Fall 2019\CSE276A\Project1_Roomba\pic\roomba.gif.gif)
+![demo](https://github.com/coldhenry/PiCar_Robotics/blob/master/Project1_Roomba/pic/roomba.gif.gif)
 
 ## Performance Evaluation 
 
 To compute the area that the PiCar covers, we break down the path it goes. In our strategy, the PiCar goes through three rounds, and the path consists of 11 straight lines and 12 turns. Ideally, each two lines or curves are not overlapped. 
 
-\-    The size of the PiCar is 
+\-    The size of the PiCar is 12 inches * 4.5 inches = 48 inches^2 
 
-\-   The total length of straight lines is 
+\-   The total length of straight lines is (58-12)*3 + (58-32)*3 + (58-48)*3 + (58-20) + (58-36) = 306
 
-\-   The sweep area of each turn 
+\-   The sweep area of each turn is 7(curvature radius)^2 * 0.8 = 39.2
 
-\-   Total estimated sweep area 
+\-   Total estimated sweep area is 306*4.5 + 39.2*12 = 1847.4
 
-\-   Estimated performance 
+\-   Estimated performance is 1847.4/ (58^2) = 54.9 % 
 
 Therefore, if the PiCar stays in the given area and do the strategy, it can at least achieve 54.9% coverage.
 
