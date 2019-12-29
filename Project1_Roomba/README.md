@@ -1,5 +1,7 @@
 
 
+# Project 1 : Roomba Robot
+
 ## Objective
 
 Design a “Roomba” like system. The robot should be able to navigate an environment and provide a level of coverage of the area.
@@ -57,6 +59,10 @@ Based on these thoughts, the control flow is shown:
 <img src="C:\Users\coldhenry\Desktop\Fall 2019\CSE_276(PC)\HW\HW5\Picture3.png" alt="img6" style="zoom:48%;" /> 
 
 The target is defined as the distance between the landmark and the PiCar in each round. The distance varies to change the sweeping path the car goes. The PiCar moves first, then it would use the sensor (in our cases, the sensor we have is the camera) to detect the QR code. After deriving the information, we turn to the feedback section. Two information we need to feedback are: whether the PiCar needs to adjust its orientation and whether the PiCar is too far or too close to the landmark. Whenever these decisions are made, the command would be sent back to the hardware section and executed by the motor again. 
+
+## Demo
+
+![demo](https://j.gifs.com/oVmkpA.gif)
 
 ## Performance Evaluation 
 
