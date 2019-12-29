@@ -28,7 +28,7 @@ More details would be presented in the following sections.
 
 ## Coverage Behavior
 
-<img src="C:\Users\coldhenry\Desktop\Fall 2019\CSE276A\Project1_Roomba\pic\type1.jpg" alt="coverage" style="zoom:33%;" /> 
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project1_Roomba/pic/type1.jpg" alt="qr" style="zoom:48%;" />
 
 As shown in the figure above, the left side is the type 1; and the right side is type 2
 
