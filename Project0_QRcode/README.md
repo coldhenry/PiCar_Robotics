@@ -86,7 +86,7 @@ markers for localization
 
 ### Demo
 
-
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project0_QRcode/pic/QR.gif" alt="layout" width="540" />
 
 ### Description and Discussion:
 
