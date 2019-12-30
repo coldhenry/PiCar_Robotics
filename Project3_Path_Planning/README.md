@@ -23,12 +23,10 @@ The coordinates of the start point, 1st point, and the 2nd point are marked in t
 
    I take the longest part of the car to build the configuration map. In the beginning, I try to make the shape of PiCar to fit in a circle. However, I change to fit in a square. One main reason is to take the practical issue into consideration. The performance of PiCar varies dramatically from time to time, so choose the map that has the biggest C-obstacle is a better choice for me. 
 
-|      |                                                              |      |                                                              |
-| ---- | ------------------------------------------------------------ | ---- | ------------------------------------------------------------ |
-|      | <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/config.png" alt="layout" width="375" /> |      | <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/voronoi.png" alt="layout" width="375" /> |
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/config.png" alt="layout" width="375" />
 
 
-   Therefore, the configuration map constructed by this strategy is presented below. The set of green lines is the original map and the black one is the configuration map.
+Therefore, the configuration map constructed by this strategy is presented below. The set of green lines is the original map and the black one is the configuration map.
 
 
 
@@ -46,8 +44,9 @@ d.   To find the shortest path in the Voronoi diagram, I use the Dijkstra algori
 
 e.   After finding the trajectory of the shortest path, decide how many points to be used for the run.
 
-
 The result is shown on the right side of the images above. The blue lines indicate the Voronoi diagram and the right line refers to the trajectory of the shortest path.
+
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/voronoi.png" alt="layout" width="375" />
 
 ## Visibility graph based path planner
 
