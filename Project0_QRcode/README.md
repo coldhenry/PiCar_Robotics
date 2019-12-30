@@ -8,7 +8,7 @@ landmarks you should be able to improve your localization performance and
 through this drive more eﬀectively. The general structure of the anticipated
 system is shown below.
 
-
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project0_QRcode/pic/objective.png" alt="layout" width="640" />
 
 We will use QR markers as landmarks. A number of unique QR codes
 was uploaded with the homework description. The tasks are
@@ -28,12 +28,11 @@ markers for localization
 
 ### QR code Placement
 
-
-
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project0_QRcode/pic/Map.png" alt="layout" width="640" />
 
  From the map below, each QR code is placed near the target point and face different directions. They are all about 50~60 cm away from the point since I found that this is the minimal distance that ensures the normal operation of the camera. Except for the first QR code, the rest of them are placed parallel to the desired direction. The thought is to guide the PiCar drive to a suitable spot for making a turn.
 
-
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project0_QRcode/pic/environ.png" alt="layout" width="640" />
 
  
 
@@ -93,11 +92,7 @@ QR code.
 
 1)  As shown below, this sketch shows the path the PiCar goes. The final path, which is the brown dashed line in the graph, is like a rectangle shape. I set the QR codes on each corner of the rectangle so that the only task the PiCar does is to keep the assigned distance with signs and make a turn on suitable timing. The four red circles in the graph is the time when the PiCar makes a turn.
 
- 
-
-
-
-
+<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project0_QRcode/pic/Picture1.png" alt="layout" width="640" />
 
 2)  Whenever the PiCar meets a new sign, the first thing is to make sure the sign is in the middle of the view. By doing this, it won’t get lost with the direction and keep updating the information.
 
