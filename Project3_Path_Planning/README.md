@@ -9,13 +9,15 @@
 
 ## Environment Setup
 
-<img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/map.png" alt="layout" width="375" />
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/map.png" alt="layout" width="375" /> | <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/realmap.png" alt="layout" width="375" /> |
 
 The size of the environment is as same as the previous one, which shrinks from 10x10(ft) to 8x8(ft) due to the limitation of the space. And the QR code placement is shown. 
 
 The coordinates of the start point, 1st point, and the 2nd point are marked in the picture below. The unit of the coordinate is an inch.  
 
- <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/realmap.png" alt="layout" width="375" />
+ 
 
 ## Map Representation
 
