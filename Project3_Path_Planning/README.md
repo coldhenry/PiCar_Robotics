@@ -99,11 +99,11 @@ Both strategies show different properties from various perspectives. There are f
 
 - Visibility-graph-based Path planner demo 
 
-  <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/visibility.gif" alt="layout" width="375" />
+  <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/visibility.gif" alt="layout" width="540" />
 
 - Voronoi-based path planner demo
 
-   <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/voronoi.gif" alt="layout" width="375" />
+   <img src="https://github.com/coldhenry/PiCar_Robotics/blob/master/Project3_Path_Planning/pic/voronoi.gif" alt="layout" width="540" />
 
  
 
