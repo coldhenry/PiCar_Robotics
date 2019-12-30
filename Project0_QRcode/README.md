@@ -2,7 +2,23 @@
 
 ## Objective
 
+The objective of this exercise is to use the on-board camera to drive to
+speciﬁc locations in your environment. Using feedback from the detected
+landmarks you should be able to improve your localization performance and
+through this drive more eﬀectively. The general structure of the anticipated
+system is shown below.
 
+
+
+We will use QR markers as landmarks. A number of unique QR codes
+was uploaded with the homework description. The tasks are
+
+1. Drive to position (1,0,0) place a QR marker at an appropriate location
+to assist with localization
+2. Continue onwards to location (1,2,π) again with the assistance of QR
+markers for localization
+3. Return to location (0,0,0).
+4. For each position estimate your localization error
 
 ## Algorithms
 
@@ -41,32 +57,27 @@ QR code.
 
    For a specific path, the process might change. Take the path 3 (from (1,2, pi) to the origin point) as an example, since that I place two QR codes on this path, the PiCar could update the information from different sources.
 
-·    Function Design
+### Function Design
 
-   There are ___ functions in this assignment, which are basically for vision and motion. While designing algorithms, I have encountered some specific problems and come up with some of these functions below:
+   There are several functions in this assignment, which are basically for vision and motion. While designing algorithms, I have encountered some specific problems and come up with some of these functions below:
 
-Q1: What to do when the PiCar should detect QR code but it cannot see any of it?
-     [Function *QR_Find_Detect*]
+#### Q1: What to do when the PiCar should detect QR code but it cannot see any of it?
+
+**Function *QR_Find_Detect* **
 
    The reasons that PiCar can’t detect are either too far/close/left/right, and therefore the first action I take is to go backward and scan again. If it’s not working, turn left or right a bit and check again. Repeat the whole process if it fails again.
 
- 
+#### Q2: The PiCar can detect QR code, but the information isn’t continuous.
 
- 
-
-Q2: The PiCar can detect QR code, but the information isn’t continuous.
-
-​    [Function *QR_DistanceDetect*]
+**Function *QR_DistanceDetect* **
 
    As I collect the data from zbar.decode(), it turns out that even put the QR code in a perfect distance, the data would mix with plenty of blanks into it and cause trouble while processing on other functions. 
 
    To solve this problem, I choose to output the data every given period of time instead of output instantaneously. On each collected data, I choose the mode of it and set it as the output. Also, if the blank(presented as ‘0’ in data) is the mode, it would be selected if the time it appears in the data is bigger than half of the data size. By doing this, I can stabilize the output of detection.
 
- 
+#### Q3: The QR code icon is not in the middle of the camera
 
-Q3: The QR code icon is not in the middle of the camera
-
-​    [Function *LR_Cali*]
+**Function *LR_Cali* ** 
 
   To let the PiCar face the QR code more accurate, the first move is to go backward, turn a bit left, and check what the QR code is. And do it again for the right turn. Since the displacement in the view is sensitive to the movements, each move is slower compared to other commands.
 
@@ -74,9 +85,11 @@ Q3: The QR code icon is not in the middle of the camera
 
 ##   Achieved Results and Discussion
 
-·    Demo: [YouTube Link](https://youtu.be/fk6V-1aJezg)
+### Demo
 
-·    Description and Discussion:
+
+
+### Description and Discussion:
 
 1)  As shown below, this sketch shows the path the PiCar goes. The final path, which is the brown dashed line in the graph, is like a rectangle shape. I set the QR codes on each corner of the rectangle so that the only task the PiCar does is to keep the assigned distance with signs and make a turn on suitable timing. The four red circles in the graph is the time when the PiCar makes a turn.
 
